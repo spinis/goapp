@@ -5,5 +5,5 @@ COPY ./goapp.go .
 RUN CFG_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o /usr/local/bin/gostart  
 
 FROM scratch AS runtime-stage
-COPY --from=gobuilder-stage /usr/loca/bin/gostart /usr/local/bin/gostart
-CMD ["/usr/loca/bin/gostart"]
+COPY --from=gobuilder-stage /usr/local/bin/gostart /usr/local/bin/gostart
+CMD ["/usr/local/bin/gostart"]
